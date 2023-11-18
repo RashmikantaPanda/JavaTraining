@@ -1,0 +1,10 @@
+1. Write a java program to make a simple calculator.
+2. WAJP to make a simple ATM simulator.
+3. WAJP to calculate simple interest.
+4. WAJP to swap two number without using third variable.
+5. WAJP to find the greatest among three numbers.
+6. WAJP to find the greatest among two numbers.
+7. WAJP to find the number is even or odd.
+8. WAJP to print fibonacci series.
+9. WAJP to check armstrong  number.
+10. Explain about loop.
