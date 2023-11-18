@@ -1,0 +1,5 @@
+2023-11-09 12:59:19 DEBUG HelloWorld:11 - Sample debug message
+2023-11-09 12:59:19 INFO  HelloWorld:12 - Sample info message
+2023-11-09 12:59:19 WARN  HelloWorld:13 - Sample warn message
+2023-11-09 12:59:19 ERROR HelloWorld:14 - Sample error message
+2023-11-09 12:59:19 FATAL HelloWorld:15 - Sample fatal message
