@@ -1,0 +1,39 @@
+<!DOCTYPE web-app PUBLIC
+        "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+        "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+    <display-name>Archetype Created Web Application</display-name>
+    <welcome-file-list>
+        <welcome-file>registration.html</welcome-file>
+    </welcome-file-list>
+
+
+    <servlet>
+        <servlet-name>Login</servlet-name>
+        <servlet-class>com.rk.LoginServelet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Login</servlet-name>
+        <url-pattern>/loginServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>Welcome</servlet-name>
+        <servlet-class>com.rk.Welcome</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Welcome</servlet-name>
+        <url-pattern>/Welcome</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>Registration</servlet-name>
+        <servlet-class>com.rk.RegisterServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Registration</servlet-name>
+        <url-pattern>/RegiserServlet</url-pattern>
+    </servlet-mapping>
+
+</web-app>
