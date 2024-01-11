@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--Setter Injection-->
+    <!-- Using primitive types-->
+    <bean id="id1" class="com.techm.spring.di.field.primitive.Employee">
+        <property name="empId" value="101"></property>
+        <property name="empName" value="Rashmikanta Panda"></property>
+        <property name="empAddress" value="Kendrapara"></property>
+    </bean>
+
+    <!-- Using Object -->
+    <bean id="id2.1" class="com.techm.spring.di.field.object.Address">
+        <property name="city" value="KDP"></property>
+        <property name="state" value="ODISHA"></property>
+        <property name="country" value="INDIA"></property>
+    </bean>
+    <bean id="id2.2" class="com.techm.spring.di.field.object.Employee2">
+        <property name="empId" value="101"></property>
+        <property name="empName" value="Rashmikanta Panda"></property>
+        <property name="address" ref="id2.1"></property>
+    </bean>
+
+    <!-- Using Collection -->
+    <bean id="id3" class="com.techm.spring.di.field.collection.Questioin">
+        <property name="id" value="100"></property>
+        <property name="name" value="What is java ?"></property>
+        <property name="answers">
+            <list>
+                <value>Java is a programming language</value>
+                <value>Java is an OOP language</value>
+                <value>Java is platform independent</value>
+                <value>Java is secure and robust</value>
+            </list>
+        </property>
+    </bean>
+
+
+    <!--Constructor Injection-->
+    <!--Constructor using primitive-->
+    <bean id="employeeBean" class="com.techm.spring.di.constructor.model.Employee">
+        <constructor-arg value="100" type="int"/>
+        <constructor-arg value="RK Panda" type="String"/>
+    </bean>
+
+    <!--Dependent object constructor injection-->
+    <bean id="addressBean" class="com.techm.spring.di.constructor.model.Address">
+        <constructor-arg value="KDP" type="String"/>
+        <constructor-arg value="ODISHA" type="String"/>
+        <constructor-arg value="INDIA" type="String"/>
+    </bean>
+
+    <bean id="employeeBean1" class="com.techm.spring.di.constructor.model.Employee1">
+        <constructor-arg value="100" type="int"/>
+        <constructor-arg value="RK Panda" type="String"/>
+        <constructor-arg>
+            <ref bean="addressBean"/>
+        </constructor-arg>
+    </bean>
+
+    <!--Collection Object Constructor Injection-->
+    <bean id="questionBean" class="com.techm.spring.di.constructor.model.Question">
+        <constructor-arg value="111"/>
+        <constructor-arg value="What is java ?"/>
+        <constructor-arg>
+            <list>
+                <value>Java is a programming language</value>
+                <value>Java is an OOP language</value>
+                <value>Java is platform independent</value>
+                <value>Java is secure and robust</value>
+                <value>Current java version is v21.0</value>
+            </list>
+        </constructor-arg>
+    </bean>
+
+    <!-- Use of Bean Scope-->
+    <bean id="customerServiceBean" class="com.techm.spring.di.constructor.model.CustomerService" scope="prototype">
+        <property name="message" value="Hello, I am Rashmikanta"/>
+    </bean>
+
+    <!--Autowired-->
+    <bean class="com.techm.spring.autowired.usingxml.model.Address" name="address">
+        <property name="city" value="KDP"/>
+        <property name="state" value="ODISHA"/>
+    </bean>
+
+    <bean class="com.techm.spring.autowired.usingxml.model.Employee" name="emp" autowire="byName">
+    </bean>
+
+
+    <!--Autowired using constructor-->
+    <bean id="operation" class="com.techm.spring.autowired.usingannotation.Operation">
+
+    </bean>
+    <bean id="calculator" class="com.techm.spring.autowired.usingannotation.Calculator">
+        <constructor-arg ref="operation"/>
+    </bean>
+</beans>
